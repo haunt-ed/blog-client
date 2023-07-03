@@ -1,0 +1,16 @@
+.mainContainer {
+  .userInfo {
+    margin: 0 auto 64px;
+    
+    .profileImage {
+      @include squere(164px);
+      margin: 0 auto
+    }
+
+    h2 {
+      @extend %h2;
+      text-align: center;
+      margin-bottom: 36px;
+    }
+  }
+}

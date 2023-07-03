@@ -1,0 +1,10 @@
+.mainContainer {
+  display: flex;
+  gap: 28px;
+
+  max-width: 754px;
+  margin: 10% auto 0;
+
+  background-color: var(--from-black-to-white);
+  border-radius: 50px 40px 40px 50px;
+}

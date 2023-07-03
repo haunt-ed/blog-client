@@ -1,0 +1,11 @@
+@import './theme.scss';
+@import './reset.scss';
+@import './theme.css';
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background-color: var(--from-white-to-black);
+}

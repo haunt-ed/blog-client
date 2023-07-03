@@ -1,0 +1,19 @@
+:root {
+  --from-black-to-white: #000;
+  --from-white-to-black: #fff;
+  --from-gray-to-light: #939393;
+  --from-light-gray-to-dark: #e1e1e1;
+  --from-dark-shadow-to-light: rgba(0, 0, 0, 0.25);
+  --svg-invert: 0%;
+  --svg-invert-from-light: 100%;
+}
+
+[data-theme='dark'] {
+  --from-black-to-white: #fff;
+  --from-white-to-black: #000;
+  --from-gray-to-light: #e1e1e1;
+  --from-light-gray-to-dark: #939393;
+  --from-dark-shadow-to-light: rgba(255, 255, 255, 0.25);
+  --svg-invert: 100%;
+  --svg-invert-from-light: 0%;
+}

@@ -1,0 +1,55 @@
+.input {
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid var(--from-white-to-black);
+  color: var(--from-white-to-black);
+  width: 100%;
+
+  outline: none;
+  padding: 8px 0;
+
+  &::placeholder {
+    color: $c-grey;
+  }
+}
+
+.eye {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+
+  filter: invert(var(--svg-invert));
+}
+
+.error {
+  border-color: $c-error;
+}
+
+.label {
+  position: relative;
+  width: 100%;
+
+  .errorText {
+    position: absolute;
+    bottom: 0;
+    transform: translateY(calc(100% + 4px));
+    @extend %error;
+  }
+}
+
+.reverse {
+  .input {
+    color: var(--from-black-to-white);
+    border-color: var(--from-black-to-white);
+  }
+
+  .eye {
+    filter: invert(var(--svg-invert-from-light));
+  }
+}
+
+.textarea {
+  resize: none;
+  height: 100px;
+}

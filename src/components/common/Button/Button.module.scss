@@ -1,0 +1,21 @@
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 30px;
+
+  border-radius: 16px;
+  border: none;
+  outline: none;
+
+  cursor: pointer;
+
+  @extend %button;
+  background-color: var(--from-black-to-white);
+  color: var(--from-white-to-black);
+
+  &:disabled {
+    cursor: default;
+    background-color: var(--from-gray-to-light);
+  }
+}

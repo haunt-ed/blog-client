@@ -1,0 +1,32 @@
+.mainContainer {
+  padding: 58px 12px 36px;
+  flex-grow: 1;
+
+  h2 {
+    @extend %h3;
+    color: var(--from-white-to-black);
+    text-align: center;
+    margin-bottom: 12px;
+  }
+
+  .form {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 24px;
+
+    .error {
+      @extend %error;
+      color: $c-error;
+    }
+
+    .button {
+      background-color: var(--from-white-to-black);
+      color: var(--from-black-to-white);
+
+      &:disabled {
+        background-color: var(--from-light-gray-to-dark);
+      }
+    }
+  }
+}

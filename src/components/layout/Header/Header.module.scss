@@ -1,0 +1,67 @@
+.mainContainer {
+  padding: 48px 0;
+  display: flex;
+  justify-content: space-between;
+
+  .button {
+    height: 100%;
+  }
+
+  .rightSide {
+    display: flex;
+    gap: 64px;
+  }
+
+  .authButton {
+    position: relative;
+
+    cursor: pointer;
+
+    .authWrapper {
+      position: absolute;
+      top: 0;
+      right: -20px;
+      padding: 46px 10px;
+
+      opacity: 0;
+      user-select: none;
+      pointer-events: none;
+
+      transition: all 0.5s;
+    }
+
+    &:hover {
+      .authWrapper {
+        opacity: 1;
+        pointer-events: all;
+        user-select: all;
+      }
+    }
+
+    .menuList {
+      transform: translateY(16px);
+
+      border-radius: 14px;
+
+      padding: 12px 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+
+      width: fit-content;
+
+      background: var(--from-white-to-black);
+      box-shadow: -1px 2px 4px 1px var(--from-dark-shadow-to-light);
+
+      li {
+        @extend %p2-bold;
+        letter-spacing: 2.8px;
+        text-transform: capitalize;
+
+        a {
+          user-select: none;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,22 @@
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 20px 50px;
+
+  h3 {
+    @extend %h4;
+  }
+
+  .buttons {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+
+    .cancelButton {
+      border: 1px solid var(--from-black-to-white);
+      background-color: transparent;
+      color: var(--from-black-to-white);
+    }
+  }
+}

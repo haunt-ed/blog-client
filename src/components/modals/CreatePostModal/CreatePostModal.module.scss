@@ -1,0 +1,24 @@
+.mainContainer {
+  position: relative;
+
+  min-width: 650px;
+  padding: 36px 100px;
+
+  h2 {
+    @extend %h3;
+    margin-bottom: 32px;
+    text-align: center;
+  }
+
+  .form {
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    gap: 24px;
+
+    button {
+      padding: 16px 24px;
+    }
+  }
+}
