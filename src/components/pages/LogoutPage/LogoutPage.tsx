@@ -12,9 +12,14 @@ function LogoutPage() {
   const navigate = useNavigate();
 
   const handleLogout = async () => {
-    await AuthService.logout();
-    dispatch(logout());
-    navigate('/sign-in');
+    try {
+      await AuthService.logout();
+    } catch (error) {
+      console.log(error);
+    } finally {
+      dispatch(logout());
+      navigate('/sign-in');
+    }
   };
 
   useEffect(() => {
