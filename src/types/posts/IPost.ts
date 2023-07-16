@@ -1,3 +1,8 @@
+export interface ILike {
+  postId: number;
+  userId: number;
+}
+
 export interface IPost {
   id: number;
   createdAt: string;
@@ -5,4 +10,5 @@ export interface IPost {
   title: string;
   content: string;
   authorId: number;
+  likes: ILike[];
 }

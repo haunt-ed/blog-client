@@ -1,0 +1,31 @@
+.mainContainer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+
+  padding: 80px 40px;
+  background-color: var(--from-white-to-black);
+  border-radius: 20px;
+
+  width: 500px;
+
+  .noComments {
+    @extend %h3;
+    text-align: center;
+  }
+
+  .comments {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    max-height: 300px;
+    padding: 10px;
+    overflow-y: scroll;
+    
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+}

@@ -3,10 +3,11 @@ import styles from './ProfilePage.module.scss';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { UsersService } from '@/services/UsersService';
-import { setPosts, setProfileData } from '@/features/profile/profileSlice';
+import { setProfileData } from '@/features/profile/profileSlice';
 import UserInfo from './components/UserInfo';
 import PostsList from './components/PostsList/PostsList';
 import { PostsService } from '@/services/PostsService';
+import { setPosts } from '@/features/posts/postsSlice';
 
 function ProfilePage() {
   const { id } = useParams();

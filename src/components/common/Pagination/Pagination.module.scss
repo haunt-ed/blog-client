@@ -1,0 +1,20 @@
+.mainContainer {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+
+  .pages {
+    display: flex;
+    gap: 12px;
+
+    .active {
+      font-weight: 700;
+    }
+
+    p {
+      @extend %p2;
+      font-size: 15px;
+      line-height: 100%;
+    }
+  }
+}

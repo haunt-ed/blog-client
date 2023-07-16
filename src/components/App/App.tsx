@@ -1,14 +1,15 @@
 import { Navigate, Route, Routes } from 'react-router-dom';
-import CommonLayout from '../layout/CommonLayout/CommonLayout';
-import AuthPage from '../pages/AuthPage/AuthPage';
+import CommonLayout from '../layout/CommonLayout';
+import AuthPage from '../pages/AuthPage';
 import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { AuthService } from '@/services/AuthService';
 import { finishLoading, login, startLoading } from '@/features/auth/authSlice';
-import LogoutPage from '../pages/LogoutPage/LogoutPage';
-import ProfilePage from '../pages/ProfilePage/ProfilePage';
+import LogoutPage from '../pages/LogoutPage';
+import ProfilePage from '../pages/ProfilePage';
 import { useSelector } from 'react-redux';
 import { RootState } from '@/app/store';
+import HomePage from '../pages/HomePage';
 
 function App() {
   const dispatch = useDispatch();
@@ -35,7 +36,7 @@ function App() {
   return (
     <CommonLayout>
       <Routes>
-        <Route path="" element={<div></div>} />
+        <Route path="" element={<HomePage />} />
         <Route path="sign-in" element={<AuthPage page="login" />} />
         <Route path="sign-up" element={<AuthPage page="registration" />} />
         <Route path="logout" element={<LogoutPage />} />

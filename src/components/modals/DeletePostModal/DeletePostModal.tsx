@@ -1,7 +1,7 @@
 import { useDispatch } from 'react-redux';
 import styles from './DeletePostModal.module.scss';
 import { PostsService } from '@/services/PostsService';
-import { deletePost } from '@/features/profile/profileSlice';
+import { deletePost } from '@/features/posts/postsSlice';
 import Button from '@/components/common/Button/Button';
 
 interface Props {

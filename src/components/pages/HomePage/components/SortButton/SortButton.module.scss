@@ -1,0 +1,87 @@
+.mainContainer {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+
+  svg {
+    filter: invert(var(--svg-invert));
+  }
+
+  .orderButton {
+    transition: transform 0.5s;
+  }
+
+  .orderReverse {
+    transform: rotate(-180deg);
+  }
+}
+
+.dropdown {
+  position: relative;
+  z-index: 100;
+
+  .selected,
+  .options {
+    border-radius: 22px;
+    background: var(--from-white-to-black);
+    box-shadow: 0px 1px 4px 6px var(--from-dark-shadow-to-light);
+
+    @extend %link;
+    font-size: 18px;
+  }
+
+  .options {
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: 0;
+
+    transform: translateY(calc(100% + 20px));
+
+    opacity: 0;
+    pointer-events: none;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 10px 0;
+
+    transition: opacity 0.3s;
+
+    .option {
+      padding: 10px 20px;
+      cursor: pointer;
+
+      transition: background-color 0.5s;
+      border-radius: 6px;
+
+      &:hover {
+        background-color: var(--from-light-gray-to-dark);
+      }
+    }
+  }
+  .isOpen {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  .selected {
+    position: relative;
+    padding: 12px 40px 12px 30px;
+    cursor: pointer;
+
+    i {
+      position: absolute;
+      top: 50%;
+      right: 16px;
+      transform: translateY(-50%);
+
+      transition: transform 0.5s;
+    }
+
+    .open {
+      transform: translateY(-50%) rotate(180deg);
+    }
+  }
+}

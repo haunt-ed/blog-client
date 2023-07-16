@@ -1,11 +1,13 @@
-import styles from './PostsList.module.scss';
+import styles from './PostCard.module.scss';
 import PostEditField from './PostEditField';
 import { IPost } from '@/types/posts/IPost';
-import { useSelector } from 'react-redux';
-import { RootState } from '@/app/store';
 import { useModal } from '@/context/modalContext/ModalContextProvider';
 import DeletePostModal from '@/components/modals/DeletePostModal/DeletePostModal';
-import CrossIcon from '../../../../../assets/cross.svg';
+import CrossIcon from '../../../assets/cross.svg';
+import moment from 'moment';
+import LikeButton from '../LikeButton';
+import classNames from 'classnames';
+import CommentButton from '../CommentButton/CommentButton';
 
 interface Props {
   post: IPost;
@@ -13,9 +15,8 @@ interface Props {
 }
 
 function PostCard({ post, isUsersPage }: Props) {
-  const { title, content, id } = post;
+  const { title, content, id, createdAt, likes } = post;
   const { closeModal, openModalWithContent } = useModal();
-  
 
   const onDelete = () => {
     openModalWithContent(
@@ -32,18 +33,27 @@ function PostCard({ post, isUsersPage }: Props) {
           title
         )}
       </h3>
-      <p className={styles.editable}>
+      <p className={classNames(styles.editable, styles.content)}>
         {isUsersPage ? (
           <PostEditField field="content" defaultValue={content} postId={id} />
         ) : (
-          content
+          <div>{content}</div>
         )}
       </p>
+      <div className={styles.buttons}>
+        <LikeButton postId={id} likes={likes} />
+        <CommentButton postId={id} />
+      </div>
       {isUsersPage && (
-        <button className={styles.deleteButton} onClick={onDelete} title="Delete">
+        <button
+          className={styles.deleteButton}
+          onClick={onDelete}
+          title="Delete"
+        >
           <CrossIcon />
         </button>
       )}
+      <p className={styles.date}>{moment(createdAt).format('DD MMMM YYYY')}</p>
     </div>
   );
 }

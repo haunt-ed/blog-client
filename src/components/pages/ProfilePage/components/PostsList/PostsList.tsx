@@ -1,10 +1,10 @@
 import { useSelector } from 'react-redux';
 import styles from './PostsList.module.scss';
 import { RootState } from '@/app/store';
-import PostCard from './PostCard';
 import PlusIcon from '../../../../../assets/plus.svg';
 import { useModal } from '@/context/modalContext/ModalContextProvider';
 import CreatePostModal from '@/components/modals/CreatePostModal/CreatePostModal';
+import PostCard from '@/components/common/PostCard/PostCard';
 
 const CreatePostButton = () => {
   const { openModalWithContent, closeModal } = useModal();
@@ -22,7 +22,7 @@ const CreatePostButton = () => {
 };
 
 function PostsList() {
-  const posts = useSelector((state: RootState) => state.profile.posts);
+  const { posts } = useSelector((state: RootState) => state.posts);
   const isUsersPage = useSelector(
     (state: RootState) =>
       state.profile.profileData?.id === state.auth.userData?.id

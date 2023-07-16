@@ -8,7 +8,7 @@ import { useEffect, useState } from 'react';
 import { getFormErrors } from '@/utils/getFormErrors';
 import { PostsService } from '@/services/PostsService';
 import { useDispatch } from 'react-redux';
-import { addPost } from '@/features/profile/profileSlice';
+import { addPost } from '@/features/posts/postsSlice';
 
 interface Props {
   closeModal: () => void;

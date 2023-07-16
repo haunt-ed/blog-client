@@ -1,0 +1,30 @@
+.mainContainer {
+  display: flex;
+  gap: 8px;
+
+  p {
+    padding: 0;
+  }
+
+  button {
+    position: relative;
+    @include squere(16px);
+  }
+
+  .icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    opacity: 0;
+    transition: opacity 0.5s;
+    pointer-events: none;
+
+    filter: invert(var(--svg-invert));
+  }
+
+  .visible {
+    opacity: 1;
+    pointer-events: all;
+  }
+}

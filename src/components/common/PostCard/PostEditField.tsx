@@ -1,10 +1,10 @@
 import { useEffect, useRef, useState } from 'react';
-import styles from './PostsList.module.scss';
-import EditIcon from '../../../../../assets/edit.svg';
+import styles from './PostCard.module.scss';
+import EditIcon from '../../../assets/edit.svg';
 import { PostsService } from '@/services/PostsService';
-import CheckIcon from '../../../../../assets/check.svg';
+import CheckIcon from '../../../assets/check.svg';
 import { useDispatch } from 'react-redux';
-import { updatePost } from '@/features/profile/profileSlice';
+import { updatePost } from '@/features/posts/postsSlice';
 
 interface Props {
   defaultValue: string;
