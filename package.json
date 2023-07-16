@@ -23,7 +23,9 @@
   },
   "scripts": {
     "start": "webpack-dev-server --mode development --hot",
-    "build": "react-scripts build"
+    "build": "webpack build --config ./webpack.config.js",
+    "predeploy" : "npm run build",
+    "deploy" : "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -47,6 +49,7 @@
     "@types/axios": "^0.14.0",
     "@types/react-redux": "^7.1.25",
     "css-loader": "^6.8.1",
+    "gh-pages": "^5.0.0",
     "html-webpack-plugin": "^5.5.3",
     "node-sass": "^7.0.3",
     "sass-loader": "^13.3.2",

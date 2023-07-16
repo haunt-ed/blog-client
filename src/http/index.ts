@@ -1,7 +1,7 @@
 import { AuthResponse } from '@/types/response/AuthResponse';
 import axios, { InternalAxiosRequestConfig } from 'axios';
 
-export const API_URL = 'http://localhost:5001/api';
+export const API_URL = 'https://haunted-posty-e84419075e4c.herokuapp.com/api';
 
 const $api = axios.create({
   withCredentials: true,
